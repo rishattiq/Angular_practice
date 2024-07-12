@@ -1,0 +1,136 @@
+
+
+<div class = "mt-2 p-2 bg-secondary text-white rounded">
+
+    <h1>Attribute Directive</h1>
+    <p>*ngClass *ngStyle</p>
+    <button [routerLink]="['/structural-directive']">Navigation</button>
+    </div>
+    
+    <div class="row pt-3">
+        <div class="col-3">
+            <div class="p-3 text-center"[ngClass]="Div1bgclr">
+    
+                <h4>Div 1</h4>
+            </div>
+        </div>
+    
+    
+        <div class="col-3">
+            <div class="p-3 text-center" [ngClass]="isDiv2active==true? 'bg-success' : 'bg-warning' ">
+    
+                <h4>Div 2</h4>
+            </div>
+    
+        </div>
+    
+        <div class="col-3">
+            <div class="p-3 text-center" [ngClass] = "num1==num2 ? 'bg-primary' : 'bg-secondary'">
+                <h4>Div 3</h4>
+            </div>
+        </div>
+    
+    
+        <div class="col-3" >
+            <div class="p-3 text-center" [ngClass] = "isActive ? 'bg-primary':'bg-danger'">
+                <h4>Div 4</h4>
+            </div>
+        </div>
+
+       
+        
+    
+    
+        </div>
+
+
+    
+    <div class="row pt-3">
+    
+        <div class="col-3 text-center">
+            <div>
+                <button class="bg-primary" (click)="Addblue()">Add blue</button>
+                <button class="mx-2 bg-danger" (click)="Addred()">Add red</button>
+    
+            </div>
+        </div>
+    
+    
+        <div class="col-3 text-center">
+            <div>
+                <button class="bg-primary" (click)="Div2active()">Toggle</button>
+               
+    
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-3 text-center">
+            <div class="display: flex align-items:center">
+              <input type="text" [(ngModel)]="num1" placeholder="Num1">
+    
+              <input type="text" [(ngModel)]="num2" placeholder="Num2">
+    
+            </div>
+        </div>
+    
+        <div class="col-3 text-center">
+            <div class="display: flex align-items:center">
+    
+                <input type="checkbox" [(ngModel)]="isActive">
+    
+                <select>
+                    <option value=" ">Select state</option>
+                    <option value="USA">USA</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="Pakistan">Pakistan</option>
+    
+                </select>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="col-5">
+        <table class="table table bordered">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                  
+                    <th>isActive</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let student of studentList; let sr = index">
+                    <td>{{sr +1}}</td>
+                    <td> {{student.name}} </td>
+                    <td> {{student.city}} </td>
+                    <td>{{student.gender}}</td>
+                    <td [ngStyle]="{'background-color': student.isActive ? 'green' : 'red' }">
+
+                        <span>{{student.isActive ? 'Active' : 'Deactive'}}</span>
+                      
+                    </td>
+
+                   
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width' : student.marks + '%'}"> {{student.marks}}</div>
+                          </div>
+                         
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+    

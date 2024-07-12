@@ -1,0 +1,205 @@
+
+
+
+
+<div class = "mt-2 p-2 bg-secondary text-white rounded">
+
+    <h1>For Control flow statement</h1>
+    <p>&#64; if &#64; else &#64; if else</p>
+
+
+
+    <button [routerLink]="['/structural-directive']">Navigation</button>
+    </div>
+    
+    <div class="row pt-3">
+        <div class="col-3">
+            <div class="p-3 text-center bg-primary">
+    
+                <h4>Div 1</h4>
+            </div>
+        </div>
+    
+    
+        <div class="col-3">
+            <div class="p-3 text-center bg-warning"  >
+    
+                <h4>Div 2</h4>
+            </div>
+    
+        </div>
+    
+        <div class="col-3">
+            <div class="p-3 text-center bg-danger">
+                <h4>Div 3</h4>
+            </div>
+        </div>
+    
+    
+        <div class="col-3" >
+            <div class="p-3 text-center bg-success">
+                <h4>Active</h4>
+                <h4>Deactive</h4>
+                <h4>Pending</h4>
+            </div>
+        </div>
+
+       
+        
+    
+    
+        </div>
+
+
+    
+    <div class="row pt-3">
+    
+        <div class="col-3 text-center">
+            <div>
+                <button class="bg-primary" >Add blue</button>
+                <button class="mx-2 bg-danger" >Add red</button>
+    
+            </div>
+        </div>
+    
+    
+        <div class="col-3 text-center">
+            <div>
+                <button class="bg-primary" >Toggle</button>
+               
+    
+            </div>
+        </div>
+    
+    
+    
+    
+        <div class="col-3 text-center">
+            <div class="display: flex align-items:center">
+              <input type="text" placeholder="Num1">
+    
+              <input type="text"  placeholder="Num2">
+    
+            </div>
+        </div>
+    
+        <div class="col-3 text-center">
+            <div class="display: flex align-items:center">
+    
+    
+                <select>
+                    <option value=" ">Select status</option>
+                    <option value="Active">Active</option>
+                    <option value="Deactive">Deactive</option>
+                    <option value="Pending">Pending</option>
+    
+                </select>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="row">
+        <ul class="col-3">
+            @for(item of cityArray; track $index){
+                <li>{{item}}</li>
+            }
+        </ul>
+    </div>
+
+
+    <div class="row">
+        <ul class="col-3">
+            <select>
+                @for(item of cityArray; track $index){
+                    <option>{{item}}</option>
+                }
+            </select>
+           
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+
+            <input class="text" [(ngModel)]="daynumber">
+        </div>
+
+        <div class="col-3">
+
+            Day number is:
+
+            @switch (daynumber){
+                @case ('1') {
+                    <span>Monday</span>
+                }
+                @case ('2') {
+                    <span>Tuesday</span>
+                }
+                @case ('3') {
+                    <p>Wednesday</p>
+                }
+                @case ('4') {
+                    <p>Thursday</p>
+                }
+                @case ('5') {
+                    <p>Friday</p>
+                }
+                @case ('6') {
+                    <p>Saturday</p>
+                }
+                @case ('7') {
+                    <p>Sunday</p>
+                    }
+                @default {
+                    <p>Invalid day number</p>
+                }
+             }
+        
+        </div>
+    </div>
+
+    <div class="col-5">
+        <table class="table table bordered">
+            <thead>
+                <tr>
+                    
+
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Gender</th>
+                  
+                    <th>isActive</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for(student of studentList; track $index){
+
+                    <tr >
+                        <td> {{student.name}} </td>
+                        <td> {{student.city}} </td>
+                        <td>{{student.gender}}</td>
+                        <td >
+    
+                            <span>{{student.isActive ? 'Active' : 'Deactive'}}</span>
+                          
+                        </td>
+    
+                       
+                        <td>
+                            <div>
+                                <div> {{student.marks}}</div>
+                              </div>
+                             
+                            </td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+    
+    
+    

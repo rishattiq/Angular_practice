@@ -1,0 +1,67 @@
+<p>data-binding works!</p>
+<div class="row">
+
+    <div class="col-4">
+
+        interpolation
+    </div>
+
+    <div class="col-4">
+
+        {{courseName}}
+        <input type = "text" value="{{age}}" placeholder="enter age">
+        <input type="text" value="{{courseName}}" placeholder="Enter text">
+        <button class="btn btn-success" (click) = "showAlert('Its okay')">Show </button>
+        <button class="btn btn-success" (click) = "changeCourseName()">Change course name </button>
+
+       
+    </div>
+
+
+    <div class="col-4">
+
+        
+        
+    </div>
+
+
+</div>
+
+<div class="row">
+
+    <div class="col-3">
+
+        property data-binding
+
+        <div [class] = "style"> hello</div>
+    </div>
+
+  
+
+
+    <div class="col-5">
+        <button class="btn btn-success" (click) = "showAlert('Its okay')">Show </button>
+        <button class="btn btn-success" (click) = "changeCourseName()">Change course name </button>
+        <select [(ngModel)] = "selection">
+            <option value=""> Select </option>
+            <option value="country">Country</option>
+            <option value="city">City</option>
+        </select>
+    </div>
+<div>
+    <input type="text" [(ngModel)] = "courseName"> - {{courseName}}
+    <input type="text" [(ngModel)] = "age"> - {{age}}
+</div>
+<div>
+    <select [(ngModel)] = "selection">
+        <option value=""> Select </option>
+        <option value="country">Country</option>
+        <option value="city">City</option>
+
+
+
+
+
+ <div>
+    <h1>{{firstName()}}</h1>
+ </div>

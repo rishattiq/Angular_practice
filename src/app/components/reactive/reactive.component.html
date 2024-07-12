@@ -1,0 +1,81 @@
+<form class="row g-3 needs-validation" [formGroup]="studentForm">
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">First name</label>
+      <input type="text"  formControlName="firstName" class="form-control">
+    <div class="text-danger">
+      <div *ngIf="studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['required']">First name is required</div>
+      <div *ngIf="studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['minlength']">Min length should be 3</div>
+    </div>
+      
+      </div>
+
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    
+    <div class="col-md-4">
+      <label for="validationCustom02" class="form-label">Last name</label>
+      <input type="text" formControlName="lastName" class="form-control" >
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+        <input type="text" formControlName="userName"  class="form-control">
+        
+          <div class="text-danger">
+
+            @if( studentForm.controls['userName'].touched && studentForm.controls['userName'].errors?.['email']){
+              <div>Email is not valid</div>
+            }
+            
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">City</label>
+      <input type="text"  formControlName="city"  class="form-control">
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom04" class="form-label">State</label>
+      <select   class="form-select"  formControlName="state" >
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">Zip</label>
+      <input type="text"  formControlName="zip"  class="form-control" >
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input"  formControlName="isAccept" type="checkbox" >
+        <label class="form-check-label" for="invalidCheck">
+          Agree to terms and conditions
+        </label>
+        <div class="invalid-feedback">
+          You must agree before submitting.
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" [disabled]="studentForm.invalid" (click)="onSubmit()" type="submit">Submit form</button>
+      <button class="btn btn-primary"   type="reset">Reset form</button>
+    </div>
+    <div>
+      {{formValue | json}}
+    </div>
+  </form>

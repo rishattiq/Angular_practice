@@ -1,0 +1,132 @@
+<div class = "mt-2 p-2 bg-secondary text-white rounded">
+
+<h1>Structural Directive</h1>
+<p>*ngIf *ngFor</p>
+<button (click)="navigateto()">Navigation</button>
+
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+        <div *ngIf="isdiv1Visible" class="bg-danger p-3 text-center">
+
+            <h4>Div 1</h4>
+        </div>
+    </div>
+
+
+    <div class="col-3">
+        <div *ngIf="isdiv2Visible" class="bg-success p-3 text-center">
+
+            <h4>Div 2</h4>
+        </div>
+
+    </div>
+
+    <div class="col-3">
+        <div *ngIf="num1==num2" class="bg-secondary p-3 text-center">
+            <h4>Div 3</h4>
+        </div>
+    </div>
+
+
+    <div class="col-3">
+        <div  *ngIf="selectedState==='USA'" class="bg-primary p-3 text-center">
+            <h4>Div 4</h4>
+        </div>
+    </div>
+
+    <div>
+        <ul>
+            <li *ngFor="let city of cityArray">
+                {{city}}
+
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <select>
+            <option *ngFor="let cityname of cityArray">{{cityname}}</option>
+        </select>
+    </div>
+
+    <div>
+        <div class="col-5">
+        <table class="table table bordered">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>isActive</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let student of studentList; let sr = index">
+                    <td>{{sr +1}}</td>
+                    <td> {{student.name}} </td>
+                    <td> {{student.city}} </td>
+                    <td>
+                        <span *ngIf="student.isActive">Active</span>
+                        <span *ngIf="student.isActive===false">Deactive</span>
+                        <!-- {{student.isActive}} -->
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+
+
+<div class="row pt-3">
+
+    <div class="col-3 text-center">
+        <div>
+            <button class="bg-primary" (click)="hidediv()">Hide</button>
+            <button class="mx-2 bg-danger" (click)="showdiv()">Show</button>
+
+        </div>
+    </div>
+
+
+    <div class="col-3 text-center">
+        <div>
+            <button class="bg-primary" (click)="toggle()">Toggle</button>
+           
+
+        </div>
+    </div>
+
+
+
+
+    <div class="col-3 text-center">
+        <div class="display: flex align-items:center">
+          <input type="text" [(ngModel)]="num1" placeholder="Num1">
+
+          <input type="text" [(ngModel)] = "num2"  placeholder="Num2">
+
+        </div>
+    </div>
+
+    <div class="col-3 text-center">
+        <div class="display: flex align-items:center">
+
+            <input [(ngModel)]="isActive" type="checkbox" >
+
+            <select [(ngModel)]= "selectedState">
+                <option value=" ">Select state</option>
+                <option value="USA">USA</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Pakistan">Pakistan</option>
+
+            </select>
+        </div>
+    </div>
+   
+</div>
+
+

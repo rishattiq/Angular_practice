@@ -1,0 +1,12 @@
+
+<div>
+    <button (click)="getalluser()">Get API</button>
+</div>
+
+<div class="col3">
+    <select>
+        <option>
+            <option *ngFor="let user of userList" [value]="userList">{{user.name}}>
+        </option>
+    </select>
+</div>

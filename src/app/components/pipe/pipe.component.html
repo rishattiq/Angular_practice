@@ -1,0 +1,54 @@
+
+
+
+<div class = "mt-2 p-2 bg-secondary text-white rounded">
+
+    <h1>Pipes</h1>
+<p>Pipes are a way to transform data in Angular. They are used to manipulate data</p>
+
+</div>
+
+<div class="row">
+    <div class="col-3">
+        Original: {{firstname}}
+        <br/>
+        Uppercase: {{firstname | uppercase}}
+    </div>
+
+    <div class="col-3">
+        Original: {{firstname}}
+        <br/>
+        Lowercase: {{firstname | lowercase}}
+    </div>
+
+    <div class="col-3">
+        Original: {{firstname}}
+        <br/>
+        Titlecase: {{firstname | titlecase}}
+    </div>
+
+    <div class="col-3">
+        Original: {{currentdate}}
+        <br/>
+        DatePipe: {{currentdate | date}}
+    </div>
+
+    <div class="col-3">
+        Original: {{student}}
+        <br/>
+        DatePipe: {{student | json}}
+    </div>
+
+    <div class="col-3">
+        Original: {{currentTime}}
+        <br/>
+        <!-- DatePipe: {{currentTime | async | date:'hh:mm:ss'}} -->
+    </div>
+
+    <div class="col-3">
+        Original: {{student.address}}
+        <br/>
+        Pipe: {{student.address| na}}
+    </div>
+
+</div>
