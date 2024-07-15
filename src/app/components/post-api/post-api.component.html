@@ -2,7 +2,12 @@
     <h1>API</h1>
     <p>Post, Update, Delete</p>
   </div>
-  
+
+
+
+ <app-alert [alertType]="'Success'" [message]="'Welcome to Post component'"></app-alert>
+
+ <app-button (btnClick)="getData($event)" [btnClass]="'btn btn-success'" [btntxt]="'Click me'" >  </app-button>
   <form>
     <div class="card-body">
       <div class="row">
@@ -29,7 +34,8 @@
                 </td>
 
                 <td>
-                    <button type="btn btn primary" (click)="onDelete(item.id)">Delete</button>
+                  <app-button (btnClick)="onDelete(item.id)" [btnClass]="'btn btn-primary'" [btntxt]="'Click me'" >  </app-button>
+                    <!-- <button type="btn btn primary" (click)="onDelete(item.id)">Delete</button> -->
                 </td>
               </tr>
             </tbody>

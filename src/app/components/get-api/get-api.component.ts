@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AlertComponent } from '../reusable-component/alert/alert.component';
 
 @Component({
   selector: 'app-get-api',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AlertComponent],
   templateUrl: './get-api.component.html',
   styleUrl: './get-api.component.css'
 })
