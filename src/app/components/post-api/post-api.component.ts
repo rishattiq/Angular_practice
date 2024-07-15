@@ -29,6 +29,7 @@ export class PostApiComponent implements OnInit {
 
   }
 
+  //output
   getData(data:any){
 
    console.log(data);
