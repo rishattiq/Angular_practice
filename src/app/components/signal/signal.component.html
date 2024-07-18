@@ -1,0 +1,58 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Signals</h1>
+    <p>Create, update display signal </p>
+  </div>
+
+  <div class="row">
+    <div class="col-3">
+        {{firstname()}}
+        {{rollno()}}
+
+    </div>
+    </div>
+    <div class="row">
+
+   
+<div class="col-5">
+    <button (click)="onchange()">Submit</button>
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-5">
+    <button (click)="change_first_name()">First name</button>
+    <button (click)="change_last_name()">Last name</button>
+</div>
+</div>
+<div class="row">
+<div class="col-5">
+    {{fullname()}}
+</div>
+</div>
+
+<div class="row">
+
+
+<div class="col-5">
+    {{userObj().name}}--{{userObj().age}}--{{userObj().rollno}}
+</div>
+
+</div>
+
+<div class="row">
+
+
+<div class="col-5">
+    {{user()}}
+</div>
+</div>
+<div class="row">
+<div class="col-5">
+    <button (click)="change_age()">Age</button>
+   
+    <button (click)="Adduser()">Add user</button>
+</div>
+  </div>
+

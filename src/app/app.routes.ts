@@ -16,7 +16,7 @@ import {PostApiComponent} from './components/post-api/post-api.component';
 import {LifecycleComponent} from './components/lifecycle/lifecycle.component';
 import {LoginComponent} from './components/login/login.component';
 import {LayoutComponent} from './components/layout/layout.component';
-
+import { SignalComponent } from './components/signal/signal.component';
 
 
 export const routes: Routes = [
@@ -113,6 +113,10 @@ export const routes: Routes = [
         {
             path: 'lifecycleevents',
             component: LifecycleComponent
+        },
+        {
+            path: 'signal',
+            component: SignalComponent
         }
     
     

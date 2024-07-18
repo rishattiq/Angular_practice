@@ -23,26 +23,16 @@ export class LoginComponent {
   http = inject(HttpClient);
   
   onLogin(){
-    // if(this.userObj.Username=="admin" && this.userObj.password=="1234"){
-    //   alert("Login success");
-    //   localStorage.setItem('loginuser', this.userObj.Username)
-    //   this.router.navigateByUrl('layout')
-    // }
-    // else{
-    //   alert("Login failed")
-    // }
+    if(this.userObj.Username=="admin" && this.userObj.password=="1234"){
+      alert("Login success");
+      localStorage.setItem('loginuser', this.userObj.Username)
+      this.router.navigateByUrl('layout')
+    }
+    else{
+      alert("Login failed")
+    }
 
-    this.http.post("https://onlinetestapi.gerasim.in/api/Aqua/login",this.userObj).subscribe((res:any)=>{
-      if(res.result){
-        alert("Login success")
-        localStorage.setItem('loginuser', this.userObj.Username)
-        this.router.navigateByUrl('layout')
-      }
-      else{
-        alert(res.message)
-      }
-
-    })
+  
   }
 
 }
