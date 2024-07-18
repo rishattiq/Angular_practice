@@ -12,79 +12,113 @@ import { PipeComponent } from './components/pipe/pipe.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ReactiveComponent } from './components/reactive/reactive.component';
 import {GetApiComponent} from './components/get-api/get-api.component';
-import {PostApiComponent} from './components/post-api/post-api.component'
+import {PostApiComponent} from './components/post-api/post-api.component';
+import {LifecycleComponent} from './components/lifecycle/lifecycle.component';
+import {LoginComponent} from './components/login/login.component';
+import {LayoutComponent} from './components/layout/layout.component';
+
 
 
 export const routes: Routes = [
-    {
-        path: "add-emp",
-        component: AddEmployeeComponent
+   //default route
+   {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
 
-    },
+   },
 
-    {
-        path: "data-binding",
-        component: DataBindingComponent
+   {
 
-    },
-
-    {
-        path: "attribute-directive",
-        component: AttributedirectivesComponent
-
-    },
-
-    {
-
-        path: "pipe",
-        component: PipeComponent
-    },
-
-    {
-        path:'forms',
-        component: FormsComponent
-
-    },
-
-    {
-        path: "employee-list",
-        component: EmployeeListComponent
-
-    },
-    
-    {
-        path: "structural-directive",
-        component: StructuralDirectiveComponent
-
-    },
+    path: 'login',
+    component: LoginComponent
+   },
    
-    {
-        path: 'for-comp',
-        component:ForComponent
-    },
-    {
-        path: 'ifelse-comp',
-        component:IfelseComponent
-    },
-    {
-        path: 'switch-comp',
-        component:SwitchComponent
-    },
-    {
-        path: 'reactiveform',
-        component: ReactiveComponent
-    },
+   {
+    path: 'layout',
+    component: LayoutComponent,
+    children: [
 
-    {
-        path: 'postapi',
-        component: PostApiComponent
-    },
-
-    {
-        path: 'getapi',
-        component: GetApiComponent
-
-
-    }
+        {
+            path: "add-emp",
+            component: AddEmployeeComponent
+    
+        },
+    
+        {
+            path: "data-binding",
+            component: DataBindingComponent
+    
+        },
+    
+        {
+            path: "attribute-directive",
+            component: AttributedirectivesComponent
+    
+        },
+    
+        {
+    
+            path: "pipe",
+            component: PipeComponent
+        },
+    
+        {
+            path:'forms',
+            component: FormsComponent
+    
+        },
+    
+        {
+            path: "employee-list",
+            component: EmployeeListComponent
+    
+        },
+        
+        {
+            path: "structural-directive",
+            component: StructuralDirectiveComponent
+    
+        },
+       
+        {
+            path: 'for-comp',
+            component:ForComponent
+        },
+        {
+            path: 'ifelse-comp',
+            component:IfelseComponent
+        },
+        {
+            path: 'switch-comp',
+            component:SwitchComponent
+        },
+        {
+            path: 'reactiveform',
+            component: ReactiveComponent
+        },
+    
+        {
+            path: 'postapi',
+            component: PostApiComponent
+        },
+    
+        {
+            path: 'getapi',
+            component: GetApiComponent
+    
+    
+        },
+    
+        {
+            path: 'lifecycleevents',
+            component: LifecycleComponent
+        }
+    
+    
+    ]
+   }
+   
+    
 
 ];
